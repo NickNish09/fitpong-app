@@ -43,7 +43,16 @@ export default class Ranking extends Component{
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard ranking="#5" />
+                        <PersonCard ranking="#1"
+                                    url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
+                                    name="Ding Ning"
+                                    pontos={348}
+                        />
+                        <PersonCard ranking="#2"
+                                    url="https://wttc2018halmstad.com/wp-content/uploads/2017/03/profiles_malong-1080x810.jpg"
+                                    name="Ma Long"
+                                    pontos={341}
+                        />
                     </ScrollView>
                     <Fab />
                 </View>

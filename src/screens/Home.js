@@ -42,7 +42,11 @@ export default class Home extends Component{
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard/>
+                        <PersonCard url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
+                                    name="Ding Ning"
+                                    pontos={348}
+                                    sizeLarge={true}
+                        />
                         <StatsCard/>
                     </ScrollView>
                     <Fab navigation={this.props.navigation}/>

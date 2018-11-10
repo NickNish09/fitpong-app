@@ -10,6 +10,7 @@ export const colors  = {
     secondary: '#9e1212',
     tertiary: '#d12b2b',
     light_gray: '#929292',
+    light_green: '#54c442',
 };
 
 export const padding = {

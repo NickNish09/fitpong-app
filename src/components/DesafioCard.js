@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import { Card, CardItem, Left, Thumbnail, Body, Text, H2, Right} from 'native-base';
+import { Card, CardItem, Left, Thumbnail, Body, Text, H2, Right, View} from 'native-base';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 import createStyles from '../styles/base.js';
 
 const styles = createStyles();
 
-export default class PersonCard extends Component {
+export default class DesafioCard extends Component {
 
     constructor(props) {
         super(props);
@@ -22,13 +22,17 @@ export default class PersonCard extends Component {
             <Card>
                 <CardItem>
                     <Left>
-                        { this.props.sizeLarge ?
-                            <Thumbnail source={{uri: this.props.url}} large/> :
-                            <Thumbnail source={{uri: this.props.url}} />
+                        { this.props.victory ?
+                            <View style={{backgroundColor: colors.light_green, height: 40, width: 40, borderRadius: 30}} /> :
+                            <View style={{backgroundColor: colors.tertiary, height: 40, width: 40, borderRadius: 30}} />
                         }
                         <Body>
                         <H2 style={{paddingLeft: padding.sm_md}}>{this.props.name}</H2>
-                        <Text style={{color: "#929292",paddingLeft: padding.md, fontSize: fonts.md}}>{this.props.pontos} pontos</Text>
+                        {
+                            this.props.victory ?
+                                <Text style={{color: "#929292",paddingLeft: padding.md, fontSize: fonts.md}}>Vitória ({this.props.score})</Text> :
+                                <Text style={{color: "#929292",paddingLeft: padding.md, fontSize: fonts.md}}>Derrota ({this.props.score})</Text>
+                        }
                         </Body>
                         <Right>
                             <Text style={styles.textRanking}>{this.props.ranking}</Text>

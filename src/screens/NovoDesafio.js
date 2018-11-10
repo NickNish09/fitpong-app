@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, View, Button, Fab, Title, Body, Left, Right, Text } from 'native-base';
+import { Container, Header, Card, CardItem, View, Button, Thumbnail, Title, Body, Left, Right, Text, Item, Input } from 'native-base';
 import MainFooter from '../components/MainFooter';
-import PersonCard from '../components/PersonCard';
-import StatsCard from '../components/StatsCard';
-import {ScrollView, StatusBar} from 'react-native';
+import {ScrollView, FlatList} from 'react-native';
 import Icon from '../components/MIcon';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 
@@ -16,7 +14,12 @@ export default class NovoDesafio extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: false,
+            search: '',
+            players: [
+                {name: 'Ma Long', ranking: 2, points: 341, url: "https://wttc2018halmstad.com/wp-content/uploads/2017/03/profiles_malong-1080x810.jpg"},
+                {name: 'Ding Ning', ranking: 1, points: 348,url: "http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"}
+            ],
         }
     }
 
@@ -29,7 +32,40 @@ export default class NovoDesafio extends Component{
 
     }
 
+    renderPlayers() {
+        let arr = this.state.players.filter(
+            (player) => {
+                return player.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+            }
+        );
+        return <FlatList
+            data={arr}
+            renderItem={
+                ({item: player}) =>
+                    <Card key={player.name}>
+                        <CardItem>
+                            <Left>
+                                <Thumbnail source={{uri: player.url}} />
+                                <Body>
+                                <Text>{player.name}</Text>
+                                </Body>
+                            </Left>
+                            <Right>
+                                <Button primary
+                                        onPress={() => console.log("oi")}
+                                >
+                                    <Text>Desafiar</Text>
+                                </Button>
+                            </Right>
+                        </CardItem>
+                    </Card>
+            }
+        />
+
+    }
+
     render(){
+        var self = this;
         return(
             <Container>
 
@@ -53,7 +89,28 @@ export default class NovoDesafio extends Component{
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <StatsCard/>
+                        <Item style={{backgroundColor: '#fff',padding: 10,marginBottom: 5}}>
+                            <Icon name="ios-search"
+                                  style={{fontSize: 25}}
+                            />
+                            <Input placeholder="Procurar adversário"
+                                   value={this.state.search}
+                                   style={{fontSize: 22}}
+                                   onChangeText={(text) => {
+                                       self.setState({search: text})
+                                   }}
+                            />
+                            <Button
+                                transparent
+                                onPress={() => self.setState({ search: ''})}
+                            >
+                                <Icon name="times-circle"
+                                      family="FontAwesome"
+                                      style={{fontSize: 25,color: 'rgba(0,0,0,0.82)'}}
+                                />
+                            </Button>
+                        </Item>
+                        {this.renderPlayers()}
                     </ScrollView>
                 </View>
                 <MainFooter/>
