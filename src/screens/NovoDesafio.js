@@ -17,8 +17,8 @@ export default class NovoDesafio extends Component{
             active: false,
             search: '',
             players: [
-                {name: 'Ma Long', ranking: 2, points: 341, url: "https://wttc2018halmstad.com/wp-content/uploads/2017/03/profiles_malong-1080x810.jpg"},
-                {name: 'Ding Ning', ranking: 1, points: 348,url: "http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"}
+                {id: 1, name: 'Ma Long', ranking: 2, points: 341, url: "https://wttc2018halmstad.com/wp-content/uploads/2017/03/profiles_malong-1080x810.jpg"},
+                {id: 2, name: 'Ding Ning', ranking: 1, points: 348,url: "http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"}
             ],
         }
     }
@@ -42,7 +42,7 @@ export default class NovoDesafio extends Component{
             data={arr}
             renderItem={
                 ({item: player}) =>
-                    <Card key={player.name}>
+                    <Card key={player.id}>
                         <CardItem>
                             <Left>
                                 <Thumbnail source={{uri: player.url}} />
@@ -67,6 +67,7 @@ export default class NovoDesafio extends Component{
                         </CardItem>
                     </Card>
             }
+            keyExtractor={(item, index) => index.toString()}
         />
 
     }

@@ -36,7 +36,15 @@ export default class Home extends Component{
                 <Header style={styles.header}
                         androidStatusBarColor={colors.tertiary}
                 >
-                    <Left/>
+                    <Left>
+                        <Button iconLeft transparent
+                                onPress={() => console.log("oi")}
+                        >
+                            <Icon style={styles.iconPrimary}
+                                  name="stats"
+                            />
+                        </Button>
+                    </Left>
                     <Body>
                         <Title>Estatísticas</Title>
                     </Body>

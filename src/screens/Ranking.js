@@ -37,7 +37,15 @@ export default class Ranking extends Component{
                 <Header style={styles.header}
                         androidStatusBarColor={colors.tertiary}
                 >
-                    <Left/>
+                    <Left>
+                        <Button iconLeft transparent
+                                onPress={() => console.log("oi")}
+                        >
+                            <Icon style={styles.iconPrimary}
+                                  name="trophy"
+                            />
+                        </Button>
+                    </Left>
                     <Body>
                     <Title>Ranking</Title>
                     </Body>

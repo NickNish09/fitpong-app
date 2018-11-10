@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Card, CardItem, Left, Thumbnail, Body, Text, H2, Fab} from 'native-base';
+import { Text, H2, Fab} from 'native-base';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 import createStyles from '../styles/base.js';
 import Icon from "./MIcon";
 import { withNavigation } from 'react-navigation';
+import {ToastAndroid} from 'react-native';
 
 const styles = createStyles();
 
@@ -17,6 +18,7 @@ class FabButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            showToast: false,
         }
     }
 
@@ -32,7 +34,11 @@ class FabButton extends Component {
                 containerStyle={{ }}
                 style={{ backgroundColor: colors.secondary }}
                 position="bottomRight"
-                onPress={() => this.props.navigation.navigate('Desafio')}>
+                onPress={() => {
+                    ToastAndroid.show('Procurando Adversários...', ToastAndroid.SHORT);
+                    this.props.navigation.navigate('Desafio')}
+                }
+            >
                 <Icon name='sword-cross'
                       family='MaterialCommunityIcons'
                       style={styles.iconPrimary}

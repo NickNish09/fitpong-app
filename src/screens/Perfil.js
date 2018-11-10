@@ -36,7 +36,15 @@ export default class Perfil extends Component{
                 <Header style={styles.header}
                         androidStatusBarColor={colors.tertiary}
                 >
-                    <Left/>
+                    <Left>
+                        <Button iconLeft transparent
+                                onPress={() => console.log("oi")}
+                        >
+                            <Icon style={styles.iconPrimary}
+                                  name="person"
+                            />
+                        </Button>
+                    </Left>
                     <Body>
                     <Title>Perfil</Title>
                     </Body>

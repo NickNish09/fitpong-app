@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Header, Tabs, Tab, View, TabHeading, Title, Body, Left, Right, Text } from 'native-base';
+import {Container, Header, Tabs, Tab, View, TabHeading, Title, Body, Left, Right, Text, Button} from 'native-base';
 import MainFooter from '../components/MainFooter';
 import DesafioCard from '../components/DesafioCard';
 import StatsCard from '../components/StatsCard';
@@ -39,7 +39,16 @@ export default class Desafios extends Component{
                 <Header style={styles.header} hasTabs
                         androidStatusBarColor={colors.tertiary}
                 >
-                    <Left/>
+                    <Left>
+                        <Button iconLeft transparent
+                                onPress={() => console.log("oi")}
+                        >
+                            <Icon style={styles.iconPrimary}
+                                  name="sword-cross"
+                                  family='MaterialCommunityIcons'
+                            />
+                        </Button>
+                    </Left>
                     <Body>
                     <Title>Desafios</Title>
                     </Body>

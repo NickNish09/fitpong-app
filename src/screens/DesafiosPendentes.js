@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Container, Header, Content, View, Button, Title, Body, Left, Right } from 'native-base';
 import MainFooter from '../components/MainFooter';
-import DesafioCard from '../components/DesafioCard';
+import DesafioCardPendente from '../components/DesafioCardPendente';
 import StatsCard from '../components/StatsCard';
 import {ScrollView, StatusBar} from 'react-native';
 import Icon from '../components/MIcon';
@@ -34,10 +34,10 @@ export default class DesafiosPendentes extends Component{
         return(
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}>
-                    <DesafioCard
+                    <DesafioCardPendente
                         name="Ding Ning"
-                        victory={false}
-                        score="1x3"
+                        points={348}
+                        url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
                     />
                 </ScrollView>
             </View>
