@@ -57,6 +57,11 @@ const baseStyles = {
         color: colors.light_gray,
         fontSize: fonts.md_md,
     },
+    textSecondaryMd: {
+        color: colors.light_gray,
+        fontSize: fonts.md,
+        paddingLeft: 7,
+    },
     textRanking: {
         color: colors.light_gray,
         fontSize: fonts.ex_lg,

@@ -47,14 +47,21 @@ export default class NovoDesafio extends Component{
                             <Left>
                                 <Thumbnail source={{uri: player.url}} />
                                 <Body>
-                                <Text>{player.name}</Text>
+                                <Text style={{fontSize: fonts.md_md, paddingLeft: 8}}>{player.name}</Text>
+                                <Text style={styles.textSecondaryMd}>{player.points} pontos</Text>
                                 </Body>
                             </Left>
                             <Right>
-                                <Button primary
+                                <Button style={{backgroundColor: colors.primary}}
                                         onPress={() => console.log("oi")}
+                                        iconRight
                                 >
                                     <Text>Desafiar</Text>
+                                    <Icon active name="sword-cross"
+                                          style={{fontSize: 17}}
+                                          family='MaterialCommunityIcons'
+                                          color='#ffffff'
+                                    />
                                 </Button>
                             </Right>
                         </CardItem>
