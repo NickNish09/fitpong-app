@@ -37,7 +37,7 @@ class MainFooter extends Component{
                     <Button badge vertical
                             onPress={() => this.props.navigation.navigate('Desafios')}
                     >
-                        <Badge ><Text>7</Text></Badge>
+                        <Badge style={{backgroundColor: 'black'}}><Text>7</Text></Badge>
                         <Icon active name="sword-cross"
                               style={{fontSize: 20}}
                               family='MaterialCommunityIcons'

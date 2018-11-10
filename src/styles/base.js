@@ -73,6 +73,9 @@ const baseStyles = {
     backgroundPrimary: {
         backgroundColor: '#BC0000',
     },
+    tabStyle: {
+        backgroundColor: colors.secondary,
+    },
 };
 
 export default function createStyles(overrides = {}) {

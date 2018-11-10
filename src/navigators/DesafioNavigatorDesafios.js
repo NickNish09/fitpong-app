@@ -1,5 +1,5 @@
 import {createStackNavigator} from 'react-navigation';
-import DesafiosScreen from '../screens/Desafios';
+import DesafiosScreen from '../navigators/DesafioHistoricoNav';
 import NovoDesafioScreen from '../screens/NovoDesafio';
 
 export default createStackNavigator(
@@ -12,4 +12,10 @@ export default createStackNavigator(
         },
         Desafio: NovoDesafioScreen,
     },
+    {
+        navigationOptions: {
+            tabBarVisible: false,
+            header: null,
+        },
+    }
 );
