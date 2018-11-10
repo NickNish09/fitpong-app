@@ -11,6 +11,7 @@ import RootStack from './src/RootStacks';
 
 type Props = {};
 export default class App extends Component<Props> {
+
   render() {
     return (
       <RootStack />

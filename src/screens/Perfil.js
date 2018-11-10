@@ -44,7 +44,7 @@ export default class Perfil extends Component{
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
                     </ScrollView>
-                    <Fab/>
+                    <Fab />
                 </View>
                 <MainFooter/>
             </Container>

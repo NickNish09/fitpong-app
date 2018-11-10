@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, View, Button, Fab, Title, Body, Left, Right } from 'native-base';
+import { Container, Header, Content, View, Button, Fab, Title, Body, Left, Right, Text } from 'native-base';
 import MainFooter from '../components/MainFooter';
 import PersonCard from '../components/PersonCard';
 import StatsCard from '../components/StatsCard';
@@ -34,9 +34,20 @@ export default class NovoDesafio extends Component{
             <Container>
 
                 <Header style={styles.header}>
-                    <Left/>
+                    <Left>
+                        <Button iconLeft transparent
+                                onPress={() => this.props.navigation.goBack()}
+                        >
+                            <Icon
+                                name='arrow-left'
+                                family='MaterialCommunityIcons'
+                                style={styles.iconPrimary}
+                                color='#ffffff'
+                            />
+                        </Button>
+                    </Left>
                     <Body>
-                    <Title>Estatísticas</Title>
+                    <Title>Novo Desafio</Title>
                     </Body>
                     <Right/>
                 </Header>

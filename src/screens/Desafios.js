@@ -45,7 +45,7 @@ export default class Desafios extends Component{
                     <ScrollView style={{flex: 1}}>
                         <StatsCard/>
                     </ScrollView>
-                    <Fab/>
+                    <Fab />
                 </View>
                 <MainFooter/>
             </Container>

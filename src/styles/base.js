@@ -56,6 +56,10 @@ const baseStyles = {
         color: colors.light_gray,
         fontSize: fonts.md_md,
     },
+    textRanking: {
+        color: colors.light_gray,
+        fontSize: fonts.ex_lg,
+    },
     iconPrimary: {
         color: '#ffffff',
         fontSize: 25,

@@ -39,13 +39,13 @@ export default class Ranking extends Component{
                     <Body>
                     <Title>Ranking</Title>
                     </Body>
-                    <Right/>
+                    <Right />
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard/>
+                        <PersonCard ranking="#5" />
                     </ScrollView>
-                    <Fab/>
+                    <Fab />
                 </View>
                 <MainFooter/>
             </Container>

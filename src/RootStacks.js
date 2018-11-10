@@ -14,5 +14,8 @@ export default createBottomTabNavigator(
     },
     {
         initialRouteName: 'Home',
+        navigationOptions: {
+          tabBarVisible: false,
+        },
     }
 );
