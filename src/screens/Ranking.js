@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, View, Button, Fab, Title, Body, Left, Right } from 'native-base';
+import { Container, Header, Content, View, Button, Title, Body, Left, Right } from 'native-base';
 import MainFooter from '../components/MainFooter';
 import PersonCard from '../components/PersonCard';
 import StatsCard from '../components/StatsCard';
 import {ScrollView, StatusBar} from 'react-native';
 import Icon from '../components/MIcon';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
+import Fab from '../components/FabButton';
 
 import createStyles from '../styles/base.js';
 
@@ -36,7 +37,7 @@ export default class Ranking extends Component{
                 <Header style={styles.header}>
                     <Left/>
                     <Body>
-                    <Title>Estatísticas</Title>
+                    <Title>Ranking</Title>
                     </Body>
                     <Right/>
                 </Header>
@@ -44,20 +45,7 @@ export default class Ranking extends Component{
                     <ScrollView style={{flex: 1}}>
                         <PersonCard/>
                     </ScrollView>
-                    <Fab
-                        active={this.state.active}
-                        direction="up"
-                        containerStyle={{ }}
-                        style={{ backgroundColor: colors.secondary }}
-                        position="bottomRight"
-                        onPress={() => this.setState({ active: !this.state.active })}>
-                        <Icon name='sword-cross'
-                              family='MaterialCommunityIcons'
-                              style={styles.iconPrimary}
-                              color='#ffffff'
-
-                        />
-                    </Fab>
+                    <Fab/>
                 </View>
                 <MainFooter/>
             </Container>

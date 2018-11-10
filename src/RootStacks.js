@@ -1,9 +1,9 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
-import HomeScreen from './screens/Home';
-import RankingScreen from './screens/Ranking';
-import DesafiosScreen from './screens/Desafios';
-import PerfilScreen from './screens/Perfil';
+import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
+import HomeScreen from './navigators/DesafioNavigator';
+import RankingScreen from './navigators/DesafioNavigatorRanking';
+import DesafiosScreen from './navigators/DesafioNavigatorDesafios';
+import PerfilScreen from './navigators/DesafioNavigatorPerfil';
 
 export default createBottomTabNavigator(
     {

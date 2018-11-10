@@ -28,13 +28,11 @@ class MainFooter extends Component{
                             onPress={() => this.props.navigation.navigate('Home')}
                     >
                         <Icon name="stats" />
-                        <Text style={{fontSize: fonts.ex_sm}}>Estatísticas</Text>
                     </Button>
                     <Button vertical
                             onPress={() => this.props.navigation.navigate('Ranking')}
                     >
                         <Icon name="trophy" />
-                        <Text>Ranking</Text>
                     </Button>
                     <Button badge vertical
                             onPress={() => this.props.navigation.navigate('Desafios')}
@@ -45,13 +43,11 @@ class MainFooter extends Component{
                               family='MaterialCommunityIcons'
                               color='#ffffff'
                         />
-                        <Text>Desafios</Text>
                     </Button>
                     <Button vertical
                             onPress={() => this.props.navigation.navigate('Perfil')}
                     >
                         <Icon name="person" />
-                        <Text>Perfil</Text>
                     </Button>
                 </FooterTab>
             </Footer>
