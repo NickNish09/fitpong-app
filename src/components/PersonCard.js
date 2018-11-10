@@ -18,10 +18,10 @@ export default class PersonCard extends Component {
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={{uri: 'http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG'}} />
+                        <Thumbnail source={{uri: 'http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG'}} large />
                         <Body>
-                        <H2>Ding Ning</H2>
-                        <Text style={{color: "#929292"}}>356 pontos</Text>
+                        <H2 style={{paddingLeft: 15}}>Ding Ning</H2>
+                        <Text style={{color: "#929292",paddingLeft: 18}}>356 pontos</Text>
                         </Body>
                     </Left>
                 </CardItem>
