@@ -5,6 +5,10 @@ import {
 } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
 const screenWidth = Dimensions.get('window').width;
+import {colors, fonts, padding, dimensions} from '../styles/base.js'
+import createStyles from "../styles/base";
+
+const styles = createStyles();
 
 export default class StatsCard extends Component {
 
@@ -23,7 +27,7 @@ export default class StatsCard extends Component {
 
         const data = [
             { name: 'Vitórias', population: 11, color: '#52a33e', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-            { name: 'Derrotas', population: 17, color: '#F00', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+            { name: 'Derrotas', population: 17, color: '#d12b2b', legendFontColor: '#7F7F7F', legendFontSize: 15 },
         ];
 
         const chartConfig = {
@@ -35,20 +39,20 @@ export default class StatsCard extends Component {
         return (
             <Card>
                 <CardItem>
-                    <Text>Ranking: </Text>
-                    <Text style={{color: "#929292"}}>#34</Text>
+                    <Text style={{fontSize: fonts.md}}>Ranking: </Text>
+                    <Text style={styles.textSecondary}>#34</Text>
                 </CardItem>
                 <CardItem>
-                    <Text>Vitórias: </Text>
-                    <Text style={{color: "#929292"}}>11</Text>
+                    <Text style={{fontSize: fonts.md}}>Vitórias: </Text>
+                    <Text style={styles.textSecondary}>11</Text>
                 </CardItem>
                 <CardItem>
-                    <Text>Derrotas: </Text>
-                    <Text style={{color: "#929292"}}>17</Text>
+                    <Text style={{fontSize: fonts.md}}>Derrotas: </Text>
+                    <Text style={styles.textSecondary}>17</Text>
                 </CardItem>
                 <CardItem>
-                    <Text>Aproveitamento: </Text>
-                    <Text style={{color: "#929292"}}>39%</Text>
+                    <Text style={{fontSize: fonts.md}}>Aproveitamento: </Text>
+                    <Text style={styles.textSecondary}>39%</Text>
                 </CardItem>
                 <CardItem>
                     <PieChart
@@ -58,7 +62,7 @@ export default class StatsCard extends Component {
                         chartConfig={chartConfig}
                         accessor="population"
                         backgroundColor="transparent"
-                        paddingLeft="15"
+                        paddingLeft="5"
                     />
                 </CardItem>
             </Card>

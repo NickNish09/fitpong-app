@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
-import { Card, CardItem, Left, Thumbnail, Body, Text, H2} from 'native-base';
+import { Card, CardItem, Left, Thumbnail, Body, Text, H3, Right} from 'native-base';
+import {colors, fonts, padding, dimensions} from '../styles/base.js';
+import createStyles from '../styles/base.js';
+
+const styles = createStyles();
 
 export default class PersonCard extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
         }
     }
@@ -18,11 +22,17 @@ export default class PersonCard extends Component {
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={{uri: 'http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG'}} large />
+                        { this.props.sizeLarge ?
+                            <Thumbnail source={{uri: this.props.url}} large/> :
+                            <Thumbnail source={{uri: this.props.url}} />
+                        }
                         <Body>
-                        <H2 style={{paddingLeft: 15}}>Ding Ning</H2>
-                        <Text style={{color: "#929292",paddingLeft: 18}}>356 pontos</Text>
+                        <H3 style={{paddingLeft: padding.sm_md}}>{this.props.name}</H3>
+                        <Text style={{color: "#929292",paddingLeft: padding.md, fontSize: fonts.md}}>{this.props.pontos} pontos</Text>
                         </Body>
+                        <Right>
+                            <Text style={styles.textRanking}>{this.props.ranking}</Text>
+                        </Right>
                     </Left>
                 </CardItem>
             </Card>

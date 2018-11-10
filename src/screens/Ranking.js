@@ -12,10 +12,11 @@ import createStyles from '../styles/base.js';
 
 const styles = createStyles();
 
-export default class Home extends Component{
+export default class Ranking extends Component{
 
     static navigationOptions = {
         header: null,
+        tabBarVisible: false,
     };
 
     constructor(props) {
@@ -41,25 +42,29 @@ export default class Home extends Component{
                                 onPress={() => console.log("oi")}
                         >
                             <Icon style={styles.iconPrimary}
-                                  name="stats"
+                                  name="trophy"
                             />
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Estatísticas</Title>
+                    <Title>Ranking</Title>
                     </Body>
-                    <Right/>
+                    <Right />
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
+                        <PersonCard ranking="#1"
+                                    url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
                                     name="Ding Ning"
                                     pontos={348}
-                                    sizeLarge={true}
                         />
-                        <StatsCard/>
+                        <PersonCard ranking="#2"
+                                    url="https://wttc2018halmstad.com/wp-content/uploads/2017/03/profiles_malong-1080x810.jpg"
+                                    name="Ma Long"
+                                    pontos={341}
+                        />
                     </ScrollView>
-                    <Fab navigation={this.props.navigation}/>
+                    <Fab />
                 </View>
                 <MainFooter/>
             </Container>

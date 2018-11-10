@@ -1,42 +1,58 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Badge } from 'native-base';
+import { Container, Header, Content, Footer, FooterTab, Button, Text, Badge } from 'native-base';
+import {colors, fonts, padding, dimensions} from '../styles/base.js';
+import Icon from './MIcon';
+import { withNavigation } from 'react-navigation';
 
-export default class MainFooter extends Component{
+import createStyles from "../styles/base";
+
+const styles = createStyles();
+
+class MainFooter extends Component{
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
 
         }
     }
 
     componentWillMount(){
-
     }
 
     render(){
         return(
-            <Footer>
-                <FooterTab>
-                    <Button vertical>
-                        <Icon name="stats" />
-                        <Text>Home</Text>
+            <Footer style={styles.footer}>
+                <FooterTab style={styles.footer}>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Home')}
+                    >
+                        <Icon style={{color: '#fff'}} name="stats" />
                     </Button>
-                    <Button vertical>
-                        <Icon name="trophy" />
-                        <Text>Ranking</Text>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Ranking')}
+                    >
+                        <Icon style={{color: '#fff'}} name="trophy" />
                     </Button>
-                    <Button active badge vertical>
-                        <Badge ><Text>7</Text></Badge>
-                        <Icon active name="flash" />
-                        <Text>Desafios</Text>
+                    <Button badge vertical
+                            onPress={() => this.props.navigation.navigate('Desafios')}
+                    >
+                        <Badge style={{backgroundColor: 'black'}}><Text>7</Text></Badge>
+                        <Icon active name="sword-cross"
+                              style={{fontSize: 20, color: '#fff'}}
+                              family='MaterialCommunityIcons'
+                              color='#ffffff'
+                        />
                     </Button>
-                    <Button vertical>
-                        <Icon name="person" />
-                        <Text>Perfil</Text>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Perfil')}
+                    >
+                        <Icon style={{color: '#fff'}} name="person" />
                     </Button>
                 </FooterTab>
             </Footer>
         )
     }
 }
+
+export default withNavigation(MainFooter);

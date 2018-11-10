@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, View, Button, Title, Body, Left, Right } from 'native-base';
+import {Container, Header, Tabs, Tab, View, TabHeading, Title, Body, Left, Right, Text, Button} from 'native-base';
 import MainFooter from '../components/MainFooter';
-import PersonCard from '../components/PersonCard';
+import DesafioCard from '../components/DesafioCard';
 import StatsCard from '../components/StatsCard';
 import {ScrollView, StatusBar} from 'react-native';
 import Icon from '../components/MIcon';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 import Fab from '../components/FabButton';
+import DesafiosHistory from './DesafiosHistory';
+import DesafiosPendentes from './DesafiosPendentes';
 
 import createStyles from '../styles/base.js';
 
 const styles = createStyles();
 
-export default class Home extends Component{
+export default class Desafios extends Component{
 
     static navigationOptions = {
         header: null,
+        tabBarVisible: false,
     };
 
     constructor(props) {
@@ -33,7 +36,7 @@ export default class Home extends Component{
         return(
             <Container>
 
-                <Header style={styles.header}
+                <Header style={styles.header} hasTabs
                         androidStatusBarColor={colors.tertiary}
                 >
                     <Left>
@@ -41,25 +44,32 @@ export default class Home extends Component{
                                 onPress={() => console.log("oi")}
                         >
                             <Icon style={styles.iconPrimary}
-                                  name="stats"
+                                  name="sword-cross"
+                                  family='MaterialCommunityIcons'
                             />
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Estatísticas</Title>
+                    <Title>Desafios</Title>
                     </Body>
                     <Right/>
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard url="http://wiki.china.org.cn/wiki/images/thumb/8/81/Ding_Ning_in_Rio.JPEG/300px-Ding_Ning_in_Rio.JPEG"
-                                    name="Ding Ning"
-                                    pontos={348}
-                                    sizeLarge={true}
-                        />
-                        <StatsCard/>
+                        <Tabs>
+                            <Tab heading={ <TabHeading style={styles.tabStyle}><Icon name="flash" /><Text>Pendentes</Text></TabHeading>}
+                                 onPress={() => this.props.navigate('Desafios')}
+                            >
+                                <DesafiosPendentes />
+                            </Tab>
+                            <Tab heading={ <TabHeading style={styles.tabStyle}><Icon name="check" family="FontAwesome" /><Text>Concluídos</Text></TabHeading>}
+                                 onPress={() => this.props.navigate('DesafiosHistory')}
+                            >
+                                <DesafiosHistory/>
+                            </Tab>
+                        </Tabs>
                     </ScrollView>
-                    <Fab navigation={this.props.navigation}/>
+                    <Fab />
                 </View>
                 <MainFooter/>
             </Container>
