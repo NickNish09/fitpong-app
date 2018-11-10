@@ -62,7 +62,7 @@ export default class StatsCard extends Component {
                         chartConfig={chartConfig}
                         accessor="population"
                         backgroundColor="transparent"
-                        paddingLeft="15"
+                        paddingLeft="5"
                     />
                 </CardItem>
             </Card>

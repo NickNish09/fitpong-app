@@ -11,7 +11,7 @@ import createStyles from '../styles/base.js';
 
 const styles = createStyles();
 
-export default class Home extends Component{
+export default class Perfil extends Component{
 
     static navigationOptions = {
         header: null,
@@ -36,14 +36,12 @@ export default class Home extends Component{
                 <Header style={styles.header}>
                     <Left/>
                     <Body>
-                        <Title>Estatísticas</Title>
+                    <Title>Estatísticas</Title>
                     </Body>
                     <Right/>
                 </Header>
                 <View style={{flex: 1}}>
                     <ScrollView style={{flex: 1}}>
-                        <PersonCard/>
-                        <StatsCard/>
                     </ScrollView>
                     <Fab
                         active={this.state.active}

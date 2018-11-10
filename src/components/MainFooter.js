@@ -2,37 +2,43 @@ import React, {Component} from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Text, Badge } from 'native-base';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 import Icon from './MIcon';
+import { withNavigation } from 'react-navigation';
 
 import createStyles from "../styles/base";
 
 const styles = createStyles();
 
-export default class MainFooter extends Component{
+class MainFooter extends Component{
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
 
         }
     }
 
     componentWillMount(){
-
     }
 
     render(){
         return(
             <Footer style={styles.footer}>
                 <FooterTab style={styles.footer}>
-                    <Button vertical>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Home')}
+                    >
                         <Icon name="stats" />
                         <Text style={{fontSize: fonts.ex_sm}}>Estatísticas</Text>
                     </Button>
-                    <Button vertical>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Ranking')}
+                    >
                         <Icon name="trophy" />
                         <Text>Ranking</Text>
                     </Button>
-                    <Button badge vertical>
+                    <Button badge vertical
+                            onPress={() => this.props.navigation.navigate('Desafios')}
+                    >
                         <Badge ><Text>7</Text></Badge>
                         <Icon active name="sword-cross"
                               style={{fontSize: 20}}
@@ -41,7 +47,9 @@ export default class MainFooter extends Component{
                         />
                         <Text>Desafios</Text>
                     </Button>
-                    <Button vertical>
+                    <Button vertical
+                            onPress={() => this.props.navigation.navigate('Perfil')}
+                    >
                         <Icon name="person" />
                         <Text>Perfil</Text>
                     </Button>
@@ -50,3 +58,5 @@ export default class MainFooter extends Component{
         )
     }
 }
+
+export default withNavigation(MainFooter);
