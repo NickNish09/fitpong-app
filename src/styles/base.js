@@ -6,9 +6,9 @@ export const dimensions = {
 };
 
 export const colors  = {
-    primary: '#226B74',
-    secondary: '#254B5A',
-    tertiary: '#5DA6A7',
+    primary: '#BC0000',
+    secondary: '#9e1212',
+    tertiary: '#d12b2b',
     light_gray: '#929292',
 };
 
@@ -23,10 +23,12 @@ export const padding = {
 };
 
 export const fonts = {
+    ex_sm: 8,
     sm: 12,
     md: 18,
     md_md: 21,
     lg: 28,
+    ex_lg: 35,
     primary: 'Cochin'
 };
 
@@ -37,10 +39,14 @@ const baseStyles = {
         width: dimensions.fullWidth
     },
     header: {
-        backgroundColor: 'transparent',
+        backgroundColor: '#BC0000',
         fontSize: fonts.lg,
-        fontFamily: fonts.primary,
         fontWeight: 'bold'
+    },
+    footer: {
+        backgroundColor: '#BC0000',
+        fontSize: fonts.lg,
+        fontWeight: 'bold',
     },
     section: {
         paddingVertical: padding.lg,
@@ -49,6 +55,13 @@ const baseStyles = {
     textSecondary: {
         color: colors.light_gray,
         fontSize: fonts.md_md,
+    },
+    iconPrimary: {
+        color: '#ffffff',
+        fontSize: 25,
+    },
+    backgroundPrimary: {
+        backgroundColor: '#BC0000',
     },
 };
 

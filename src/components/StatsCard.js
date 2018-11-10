@@ -27,7 +27,7 @@ export default class StatsCard extends Component {
 
         const data = [
             { name: 'Vitórias', population: 11, color: '#52a33e', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-            { name: 'Derrotas', population: 17, color: '#F00', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+            { name: 'Derrotas', population: 17, color: '#d12b2b', legendFontColor: '#7F7F7F', legendFontSize: 15 },
         ];
 
         const chartConfig = {
