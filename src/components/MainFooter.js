@@ -27,19 +27,19 @@ class MainFooter extends Component{
                     <Button vertical
                             onPress={() => this.props.navigation.navigate('Home')}
                     >
-                        <Icon name="stats" />
+                        <Icon style={{color: '#fff'}} name="stats" />
                     </Button>
                     <Button vertical
                             onPress={() => this.props.navigation.navigate('Ranking')}
                     >
-                        <Icon name="trophy" />
+                        <Icon style={{color: '#fff'}} name="trophy" />
                     </Button>
                     <Button badge vertical
                             onPress={() => this.props.navigation.navigate('Desafios')}
                     >
                         <Badge style={{backgroundColor: 'black'}}><Text>7</Text></Badge>
                         <Icon active name="sword-cross"
-                              style={{fontSize: 20}}
+                              style={{fontSize: 20, color: '#fff'}}
                               family='MaterialCommunityIcons'
                               color='#ffffff'
                         />
@@ -47,7 +47,7 @@ class MainFooter extends Component{
                     <Button vertical
                             onPress={() => this.props.navigation.navigate('Perfil')}
                     >
-                        <Icon name="person" />
+                        <Icon style={{color: '#fff'}} name="person" />
                     </Button>
                 </FooterTab>
             </Footer>

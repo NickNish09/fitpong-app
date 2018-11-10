@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, CardItem, Left, Thumbnail, Body, Text, H2, Right} from 'native-base';
+import { Card, CardItem, Left, Thumbnail, Body, Text, H3, Right} from 'native-base';
 import {colors, fonts, padding, dimensions} from '../styles/base.js';
 import createStyles from '../styles/base.js';
 
@@ -27,7 +27,7 @@ export default class PersonCard extends Component {
                             <Thumbnail source={{uri: this.props.url}} />
                         }
                         <Body>
-                        <H2 style={{paddingLeft: padding.sm_md}}>{this.props.name}</H2>
+                        <H3 style={{paddingLeft: padding.sm_md}}>{this.props.name}</H3>
                         <Text style={{color: "#929292",paddingLeft: padding.md, fontSize: fonts.md}}>{this.props.pontos} pontos</Text>
                         </Body>
                         <Right>

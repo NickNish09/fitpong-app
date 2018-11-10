@@ -36,7 +36,9 @@ export default class Desafios extends Component{
         return(
             <Container>
 
-                <Header style={styles.header} hasTabs>
+                <Header style={styles.header} hasTabs
+                        androidStatusBarColor={colors.tertiary}
+                >
                     <Left/>
                     <Body>
                     <Title>Desafios</Title>

@@ -42,7 +42,7 @@ const baseStyles = {
     header: {
         backgroundColor: '#BC0000',
         fontSize: fonts.lg,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     footer: {
         backgroundColor: '#BC0000',
@@ -75,6 +75,7 @@ const baseStyles = {
     },
     tabStyle: {
         backgroundColor: colors.secondary,
+        color: '#fff',
     },
 };
 

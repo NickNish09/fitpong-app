@@ -34,7 +34,9 @@ export default class Ranking extends Component{
         return(
             <Container>
 
-                <Header style={styles.header}>
+                <Header style={styles.header}
+                        androidStatusBarColor={colors.tertiary}
+                >
                     <Left/>
                     <Body>
                     <Title>Ranking</Title>

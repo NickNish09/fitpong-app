@@ -76,7 +76,9 @@ export default class NovoDesafio extends Component{
         return(
             <Container>
 
-                <Header style={styles.header}>
+                <Header style={styles.header}
+                        androidStatusBarColor={colors.tertiary}
+                >
                     <Left>
                         <Button iconLeft transparent
                                 onPress={() => this.props.navigation.goBack()}
